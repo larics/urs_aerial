@@ -7,7 +7,7 @@
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="paused" value="false" />
         <arg name="use_sim_time" value="true"/>
-        <!--arg name="world_name" value="slalom.world"/-->
+        <arg name="world_name" value="slalom.world"/>
     </include>
     
     <include file="$(find urs_ardrone_description)/launch/spawn_ardrone.launch">
@@ -16,5 +16,4 @@
         <arg name="y" value="$(arg y)"/>
         <arg name="z" value="$(arg z)"/>
     </include>
-
 </launch>

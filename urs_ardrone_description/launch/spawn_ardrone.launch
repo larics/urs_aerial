@@ -11,7 +11,7 @@
 
   <!-- send the robot XML to param server -->
   <param name="robot_description" command="
-    $(find xacro)/xacro.py '$(arg model)'
+    $(find xacro)/xacro '$(arg model)'
     enable_ground_truth:='$(arg enable_ground_truth)'
     namespace:=$(arg name)"
   />

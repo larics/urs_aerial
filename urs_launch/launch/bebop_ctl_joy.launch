@@ -1,0 +1,12 @@
+<launch>
+
+    <node pkg="urs_solution" type="horizontal_ctl_real.py" name="horizontal_ctl" output="screen">
+        <remap from="ardrone/takeoff" to="bebop/takeoff"/>
+        <remap from="ardrone/land" to="bebop/land"/>
+        <remap from="ardrone/reset" to="bebop/reset"/>
+        <remap from="cmd_vel" to="bebop/cmd_vel"/>
+    </node>
+
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+
+</launch>

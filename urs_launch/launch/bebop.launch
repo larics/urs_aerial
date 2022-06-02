@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+    <include file="$(find bebop_driver)/launch/bebop_node.launch">
+        <arg name="drone_type" value="bebop2"/>
+    </include>
+  
+</launch>
+

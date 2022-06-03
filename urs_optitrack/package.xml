@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>urs_optitrack</name>
+  <version>0.0.0</version>
+  <description>The urs_optitrack package</description>
+
+
+  <maintainer email="tomislav.haus@gmail.com">tomislav</maintainer>
+
+  <license>TODO</license>
+  
+  <build_depend>rospy</build_depend>
+  <build_depend>vrpn_client_ros</build_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

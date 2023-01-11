@@ -1,0 +1,12 @@
+<launch>
+
+    <node pkg="urs_solution" type="horizontal_ctl_real.py" name="horizontal_ctl" output="screen">
+        <remap from="takeoff" to="tello/takeoff"/>
+        <remap from="land" to="tello/land"/>
+        <remap from="reset" to="tello/reset"/>
+        <remap from="cmd_vel" to="tello/cmd_vel"/>
+    </node>
+
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+
+</launch>

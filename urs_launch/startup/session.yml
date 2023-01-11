@@ -1,0 +1,22 @@
+name: homogeneous_5dof
+root: ./
+startup_window: roscore
+pre_window: cd ~/; 
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+        - waitForRos; roslaunch urs_launch tello_driver.launch
+        - |
+          cd ~/;
+          waitForRos;
+          sleep 15;
+          rostopic pub /tello/fast_mode std_msgs/Bool "data: true"
+        - waitForRos; roslaunch urs_optitrack optitrack.launch
+  - control:
+      layout: main-vertical
+      panes:
+        - waitForRos; roslaunch urs_launch tello_ctl_joy.launch
+        - waitForRos; rostopic echo /Optitrack
+        - waitForRos; rostopic echo /Optitrack_vel

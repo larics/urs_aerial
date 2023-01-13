@@ -12,7 +12,7 @@ windows:
           cd ~/;
           waitForRos;
           sleep 15;
-          rostopic pub /tello/fast_mode std_msgs/Bool "data: true"
+          rostopic pub -1 /tello/fast_mode std_msgs/Bool "data: true"
         - waitForRos; roslaunch urs_optitrack optitrack.launch
   - control:
       layout: main-vertical
@@ -20,3 +20,11 @@ windows:
         - waitForRos; roslaunch urs_launch tello_ctl_joy.launch
         - waitForRos; rostopic echo /Optitrack
         - waitForRos; rostopic echo /Optitrack_vel
+  - tuning:
+      layout: tiled
+      panes:
+        - |
+          roscd urs_launch/config;
+          waitForRos;
+          sleep 10;
+          rosrun rqt_gui rqt_gui --perspective-file bebop_tuning2.perspective

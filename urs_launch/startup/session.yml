@@ -13,7 +13,7 @@ windows:
           waitForRos;
           sleep 15;
           rostopic pub -1 /tello/fast_mode std_msgs/Bool "data: true"
-        - waitForRos; roslaunch urs_optitrack optitrack.launch
+        - waitForRos; roslaunch urs_optitrack optitrack.launch tracker_ns:=tello
   - control:
       layout: main-vertical
       panes:

@@ -1,6 +1,7 @@
 <launch>
 
   <arg name="server" default="192.168.1.50"/>
+  <arg name="tracker_ns" default="parrot" />
 
   <node pkg="vrpn_client_ros" type="vrpn_client_node" name="vrpn_client_node" output="screen">
     <rosparam subst_value="true">
@@ -22,6 +23,8 @@
     </rosparam>
   </node>
 
-  <node pkg="urs_optitrack" type="vrpn_transform.py" name="vrpn_transforme" output="screen"/>
+  <node pkg="urs_optitrack" type="vrpn_transform.py" name="vrpn_transforme" output="screen">
+    <remap from="/vrpn_client_node/parrot/pose" to="/vrpn_client_node/$(arg tracker_ns)/pose"/>
+  </node>
 
 </launch>
